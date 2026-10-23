@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "opsgate"
+version = "0.1.0"
+description = "A Bedrock-powered AWS ops agent whose tool calls are gated by Strands Decider 2B"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+dependencies = ["strands-agents"]
+
+[project.optional-dependencies]
+aws = ["boto3"]
+dev = ["pytest"]
+
+[project.scripts]
+opsgate = "opsgate.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

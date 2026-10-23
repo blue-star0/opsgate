@@ -1,0 +1,12 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "BedrockInvoke",
+      "Effect": "Allow",
+      "Action": ["bedrock:InvokeModel", "bedrock:InvokeModelWithResponseStream"],
+      "Resource": "*"
+    }
+  ],
+  "_comment": "Fake-fleet demo needs only Bedrock. For OPSGATE_LIVE=1 add ec2:DescribeInstances, ec2:StopInstances, ec2:TerminateInstances scoped by tag to a throwaway sandbox, never production."
+}
